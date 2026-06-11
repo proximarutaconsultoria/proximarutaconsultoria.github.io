@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Próxima Ruta · Consultoría Vocacional y Educativa</title>
+<meta name="description" content="Orientación vocacional y educativa para adolescentes, adultos y familias. Zona sur GBA · Sesiones online · App Avanti · Ferias en colegios.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1B2D5B;
+    --navy-deep: #0F1E3A;
+    --navy-mid: #243971;
+    --gold: #C9973A;
+    --gold-light: #E8BF78;
+    --gold-pale: #F5E8CC;
+    --teal: #2A7F7F;
+    --teal-light: #3AABAB;
+    --cream: #FAF7F2;
+    --white: #FFFFFF;
+    --text-dark: #1a1a2e;
+    --text-mid: #4a5070;
+    --text-light: #8890a8;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 0 5%;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(27, 45, 91, 0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,151,58,0.15);
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--white);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+  .nav-logo span { color: var(--gold); }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold-light); }
+
+  .nav-cta {
+    background: var(--gold);
+    color: var(--navy-deep);
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 9px 22px;
+    border-radius: 4px;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy-deep);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 100px 5% 60px;
+    position: relative;
+    overflow: hidden;
+    gap: 48px;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -120px; right: -120px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(201,151,58,0.12) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: 30%;
+    width: 320px; height: 320px;
+    background: radial-gradient(circle, rgba(42,127,127,0.1) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--gold);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(38px, 4.5vw, 58px);
+    font-weight: 500;
+    color: var(--white);
+    line-height: 1.18;
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.75;
+    margin-bottom: 40px;
+    max-width: 420px;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 52px;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--navy-deep);
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 13px 28px;
+    border-radius: 4px;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+  .btn-outline {
+    background: transparent;
+    color: rgba(255,255,255,0.8);
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 400;
+    padding: 13px 28px;
+    border-radius: 4px;
+    border: 1px solid rgba(255,255,255,0.25);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-outline:hover { border-color: rgba(255,255,255,0.55); color: #fff; }
+
+  .hero-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .hero-tag {
+    font-size: 11px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.45);
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 5px 13px;
+    border-radius: 2px;
+    letter-spacing: 0.04em;
+  }
+
+  /* HERO RIGHT — stats panel */
+  .hero-panel {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,151,58,0.2);
+    border-radius: 8px;
+    padding: 36px 32px;
+    position: relative;
+  }
+
+  .panel-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+  }
+
+  .panel-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  .pstat-n {
+    font-family: var(--font-display);
+    font-size: 42px;
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .pstat-n span { color: var(--gold); font-size: 28px; }
+  .pstat-l { font-size: 12px; color: rgba(255,255,255,0.45); letter-spacing: 0.02em; line-height: 1.4; }
+
+  .panel-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.08);
+    margin-bottom: 24px;
+  }
+
+  .panel-quote {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-style: italic;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.55;
+    margin-bottom: 8px;
+  }
+
+  .panel-author {
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.04em;
+  }
+
+  /* ─── SECTION SHARED ─── */
+  section { padding: 96px 5%; }
+
+  .section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--teal);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .section-eyebrow::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: var(--teal);
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 500;
+    color: var(--navy-deep);
+    line-height: 1.25;
+    margin-bottom: 16px;
+  }
+  .section-title em { font-style: italic; color: var(--teal); }
+
+  .section-sub {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--text-mid);
+    line-height: 1.75;
+    max-width: 520px;
+    margin-bottom: 52px;
+  }
+
+  /* ─── SERVICIOS ─── */
+  .servicios { background: var(--cream); }
+
+  .servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2px;
+    border: 1px solid rgba(27,45,91,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .svc-card {
+    background: var(--white);
+    padding: 36px 32px;
+    transition: background 0.25s;
+    cursor: default;
+  }
+  .svc-card:hover { background: var(--navy-deep); }
+
+  .svc-num {
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+    transition: color 0.25s;
+  }
+
+  .svc-name {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--navy-deep);
+    margin-bottom: 12px;
+    line-height: 1.25;
+    transition: color 0.25s;
+  }
+
+  .svc-desc {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--text-mid);
+    line-height: 1.7;
+    transition: color 0.25s;
+  }
+
+  .svc-card:hover .svc-name { color: var(--white); }
+  .svc-card:hover .svc-desc { color: rgba(255,255,255,0.55); }
+  .svc-card:hover .svc-num { color: var(--gold); }
+
+  /* ─── AVANTI ─── */
+  .avanti-section {
+    background: var(--navy-deep);
+    position: relative;
+    overflow: hidden;
+  }
+  .avanti-section::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(42,127,127,0.07));
+    pointer-events: none;
+  }
+
+  .avanti-section .section-title { color: var(--white); }
+  .avanti-section .section-title em { color: var(--teal-light); }
+  .avanti-section .section-sub { color: rgba(255,255,255,0.5); }
+  .avanti-section .section-eyebrow { color: var(--teal-light); }
+  .avanti-section .section-eyebrow::before { background: var(--teal-light); }
+
+  .avanti-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .avanti-features {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .afeat {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .afeat-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--teal-light);
+    border-radius: 50%;
+    margin-top: 8px;
+    flex-shrink: 0;
+  }
+
+  .afeat-text {
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.6;
+  }
+  .afeat-text strong {
+    color: var(--white);
+    font-weight: 500;
+  }
+
+  .avanti-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--teal);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 13px 28px;
+    border-radius: 4px;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .avanti-btn:hover { background: var(--teal-light); transform: translateY(-2px); }
+  .avanti-btn svg { width: 16px; height: 16px; }
+
+  /* Phone mockup */
+  .phone-wrap {
+    display: flex;
+    justify-content: center;
+  }
+
+  .phone {
+    width: 280px;
+    background: #0A1628;
+    border-radius: 32px;
+    border: 2px solid rgba(42,127,127,0.3);
+    padding: 20px 16px;
+    position: relative;
+  }
+
+  .phone-notch {
+    width: 80px;
+    height: 8px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 4px;
+    margin: 0 auto 20px;
+  }
+
+  .phone-header {
+    background: rgba(42,127,127,0.15);
+    border: 1px solid rgba(42,127,127,0.25);
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-bottom: 14px;
+  }
+
+  .phone-app-name {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: var(--teal-light);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .phone-progress-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .phone-bar {
+    flex: 1;
+    height: 3px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .phone-bar-fill {
+    height: 100%;
+    background: var(--teal-light);
+    border-radius: 2px;
+    width: 35%;
+    animation: prog 3s ease-in-out infinite alternate;
+  }
+  @keyframes prog { to { width: 70%; } }
+
+  .phone-pct {
+    font-size: 10px;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .phone-q-text {
+    font-size: 13px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.5;
+    margin-bottom: 14px;
+    padding: 0 2px;
+  }
+
+  .phone-options {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .phone-opt {
+    padding: 9px 12px;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 400;
+    border: 1px solid rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.55);
+    background: rgba(255,255,255,0.04);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .phone-opt.active {
+    background: rgba(42,127,127,0.2);
+    border-color: rgba(42,127,127,0.5);
+    color: var(--teal-light);
+  }
+
+  .phone-footer {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 10px;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 0.06em;
+  }
+
+  /* ─── COLEGIOS ─── */
+  .colegios { background: var(--white); }
+
+  .colegios-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .colegio-items {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .citem {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    padding-bottom: 28px;
+    border-bottom: 1px solid rgba(27,45,91,0.07);
+  }
+  .citem:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .citem-num {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--gold-pale);
+    line-height: 1;
+    min-width: 36px;
+  }
+
+  .citem-title {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--navy-deep);
+    margin-bottom: 6px;
+  }
+
+  .citem-desc {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--text-mid);
+    line-height: 1.65;
+  }
+
+  .colegio-panel {
+    background: var(--navy-deep);
+    border-radius: 8px;
+    padding: 40px 36px;
+    position: sticky;
+    top: 88px;
+  }
+
+  .panel-eyebrow {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  .panel-title {
+    font-family: var(--font-display);
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--white);
+    line-height: 1.3;
+    margin-bottom: 16px;
+  }
+
+  .panel-text {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+
+  .panel-cta {
+    display: block;
+    background: var(--gold);
+    color: var(--navy-deep);
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 14px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+    letter-spacing: 0.02em;
+    transition: background 0.2s;
+    margin-bottom: 12px;
+  }
+  .panel-cta:hover { background: var(--gold-light); }
+
+  .panel-contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+  }
+
+  /* ─── PROCESO ─── */
+  .proceso { background: var(--cream); }
+
+  .proceso-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0;
+    position: relative;
+  }
+
+  .proceso-steps::before {
+    content: '';
+    position: absolute;
+    top: 32px;
+    left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(27,45,91,0.15), transparent);
+  }
+
+  .pstep {
+    padding: 0 24px 0 0;
+    position: relative;
+  }
+
+  .pstep-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 1px solid rgba(27,45,91,0.15);
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pstep-circle span {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--navy);
+  }
+
+  .pstep-name {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--navy-deep);
+    margin-bottom: 8px;
+  }
+
+  .pstep-desc {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--text-mid);
+    line-height: 1.65;
+  }
+
+  /* ─── CONTACTO ─── */
+  .contacto {
+    background: var(--navy-deep);
+    text-align: center;
+  }
+
+  .contacto .section-title { color: var(--white); }
+  .contacto .section-sub { color: rgba(255,255,255,0.5); margin-left: auto; margin-right: auto; }
+
+  .contact-grid {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 52px;
+  }
+
+  .contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border-radius: 4px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: transform 0.15s, opacity 0.2s;
+  }
+  .contact-btn:hover { transform: translateY(-2px); opacity: 0.9; }
+
+  .contact-btn.wa {
+    background: #25D366;
+    color: var(--white);
+  }
+  .contact-btn.mail {
+    background: transparent;
+    color: rgba(255,255,255,0.75);
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  .contact-btn.ig {
+    background: transparent;
+    color: rgba(255,255,255,0.75);
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .contact-detail {
+    font-size: 13px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.04em;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #0A1220;
+    padding: 28px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(201,151,58,0.1);
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 18px;
+    color: var(--white);
+    opacity: 0.6;
+  }
+  .footer-logo span { color: var(--gold); }
+
+  .footer-text {
+    font-size: 12px;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.04em;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; padding-top: 90px; }
+    .hero-panel { display: none; }
+    .avanti-inner { grid-template-columns: 1fr; }
+    .colegios-inner { grid-template-columns: 1fr; }
+    .phone-wrap { display: none; }
+    .proceso-steps { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow { animation: fadeUp 0.6s 0.1s both; }
+  .hero h1      { animation: fadeUp 0.6s 0.25s both; }
+  .hero-sub     { animation: fadeUp 0.6s 0.4s both; }
+  .hero-btns    { animation: fadeUp 0.6s 0.55s both; }
+  .hero-tags    { animation: fadeUp 0.6s 0.7s both; }
+  .hero-panel   { animation: fadeUp 0.7s 0.5s both; }
+
+  /* icons inline SVG shortcuts */
+  .ico { display: inline-block; vertical-align: middle; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Próxima <span>Ruta</span></a>
+  <ul class="nav-links">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#avanti">App Avanti</a></li>
+    <li><a href="#colegios">Instituciones</a></li>
+    <li><a href="#proceso">Proceso</a></li>
+  </ul>
+  <a href="https://wa.me/5491140849672" class="nav-cta" target="_blank">Consultar ahora</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">Consultoría vocacional y educativa</div>
+    <h1>Tu próxima ruta<br>empieza con una<br><em>buena pregunta</em></h1>
+    <p class="hero-sub">Orientamos adolescentes, adultos y familias para encontrar el camino educativo y profesional que realmente les pertenece.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/5491140849672" class="btn-primary" target="_blank">Empezar mi orientación</a>
+      <a href="#avanti" class="btn-outline">Conocer App Avanti</a>
+    </div>
+    <div class="hero-tags">
+      <span class="hero-tag">Zona sur GBA</span>
+      <span class="hero-tag">Sesiones online</span>
+      <span class="hero-tag">App vocacional propia</span>
+      <span class="hero-tag">Ferias en colegios</span>
+    </div>
+  </div>
+
+  <div class="hero-panel">
+    <div class="panel-label">Próxima Ruta · en números</div>
+    <div class="panel-stats">
+      <div>
+        <div class="pstat-n">6<span>–7</span></div>
+        <div class="pstat-l">sesiones por proceso individual</div>
+      </div>
+      <div>
+        <div class="pstat-n">60</div>
+        <div class="pstat-l">preguntas en el test Avanti</div>
+      </div>
+      <div>
+        <div class="pstat-n">10</div>
+        <div class="pstat-l">perfiles vocacionales mapeados</div>
+      </div>
+      <div>
+        <div class="pstat-n">4</div>
+        <div class="pstat-l">audiencias: adolescentes, adultos, familias, colegios</div>
+      </div>
+    </div>
+    <div class="panel-divider"></div>
+    <p class="panel-quote">"No se trata de elegir una carrera. Se trata de conocerte lo suficiente para que la elección sea tuya."</p>
+    <div class="panel-author">— Lic. María Pía Torre · Psicopedagoga</div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="servicios" id="servicios">
+  <div class="section-eyebrow">Lo que hacemos</div>
+  <h2 class="section-title">Servicios para cada <em>etapa</em></h2>
+  <p class="section-sub">Para cada persona y cada momento, un proceso a medida con acompañamiento profesional.</p>
+
+  <div class="servicios-grid">
+    <div class="svc-card">
+      <div class="svc-num">01</div>
+      <div class="svc-name">Orientación vocacional individual</div>
+      <div class="svc-desc">Proceso de 6 a 7 sesiones con entrevistas, test Avanti y entrega de Informe de Perfil Vocacional. Para adolescentes y adultos en cualquier etapa.</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-num">02</div>
+      <div class="svc-name">Acompañamiento familiar</div>
+      <div class="svc-desc">Espacios de orientación para mamás y papás que quieren acompañar sin presionar. Herramientas concretas para sostener la elección del hijo.</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-num">03</div>
+      <div class="svc-name">Reorientación en adultos</div>
+      <div class="svc-desc">Para quienes cambian de rumbo, retoman estudios o reinventan su perfil profesional. Sin juicio, con método.</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-num">04</div>
+      <div class="svc-name">Ferias vocacionales institucionales</div>
+      <div class="svc-desc">Organizamos ferias en colegios secundarios de zona sur. Las universidades pagan. El colegio pone el espacio. Los estudiantes ganan.</div>
+    </div>
+  </div>
+</section>
+
+<!-- AVANTI -->
+<section class="avanti-section" id="avanti">
+  <div class="avanti-inner">
+    <div>
+      <div class="section-eyebrow">Tecnología propia</div>
+      <h2 class="section-title">App Avanti · el test que <em>abre conversaciones</em></h2>
+      <p class="section-sub">60 preguntas, 10 perfiles de conocimiento, resultados inmediatos por WhatsApp y email. Disponible para colegios y consultas privadas.</p>
+
+      <div class="avanti-features">
+        <div class="afeat">
+          <div class="afeat-dot"></div>
+          <div class="afeat-text"><strong>Test SOVI adaptado</strong> — metodología validada con 60 preguntas sobre intereses, gustos y valores vocacionales.</div>
+        </div>
+        <div class="afeat">
+          <div class="afeat-dot"></div>
+          <div class="afeat-text"><strong>10 áreas de conocimiento</strong> — resultados con perfil dominante, secundario y mapa completo de intereses.</div>
+        </div>
+        <div class="afeat">
+          <div class="afeat-dot"></div>
+          <div class="afeat-text"><strong>Entrega inmediata</strong> — el alumno recibe su informe por WhatsApp y email al finalizar.</div>
+        </div>
+        <div class="afeat">
+          <div class="afeat-dot"></div>
+          <div class="afeat-text"><strong>Acceso institucional</strong> — código especial para estudiantes de Ausonia y colegios asociados.</div>
+        </div>
+      </div>
+
+      <a href="https://avanti-proximaruta.netlify.app" class="avanti-btn" target="_blank">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6.5"/><path d="M6 8l2 2 3-3"/></svg>
+        Probar Avanti ahora
+      </a>
+    </div>
+
+    <div class="phone-wrap">
+      <div class="phone">
+        <div class="phone-notch"></div>
+        <div class="phone-header">
+          <div class="phone-app-name">Avanti · test vocacional</div>
+          <div class="phone-progress-wrap">
+            <div class="phone-bar"><div class="phone-bar-fill"></div></div>
+            <span class="phone-pct">35%</span>
+          </div>
+        </div>
+        <p class="phone-q-text">¿Te gustaría diseñar sistemas de computación o desarrollar aplicaciones tecnológicas?</p>
+        <div class="phone-options">
+          <div class="phone-opt active">Me gusta</div>
+          <div class="phone-opt">Indiferencia</div>
+          <div class="phone-opt">No me gusta</div>
+        </div>
+        <div class="phone-footer">AVANTI · PRÓXIMA RUTA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COLEGIOS -->
+<section class="colegios" id="colegios">
+  <div class="colegios-inner">
+    <div>
+      <div class="section-eyebrow">Para instituciones</div>
+      <h2 class="section-title">Tu colegio puede <em>ofrecer más</em></h2>
+      <p class="section-sub">Llevamos orientación vocacional profesional a colegios secundarios de zona sur sin costo para la institución.</p>
+
+      <div class="colegio-items">
+        <div class="citem">
+          <div class="citem-num">01</div>
+          <div>
+            <div class="citem-title">Feria vocacional sin costo</div>
+            <div class="citem-desc">Organizamos la feria completa. Las universidades pagan su stand de participación. El colegio solo aporta el espacio y los alumnos ganan una experiencia real.</div>
+          </div>
+        </div>
+        <div class="citem">
+          <div class="citem-num">02</div>
+          <div>
+            <div class="citem-title">Charlas incluidas</div>
+            <div class="citem-desc">Damos dos charlas en el evento: orientación vocacional para 5° y 6° año, y preparación para la primera entrevista laboral.</div>
+          </div>
+        </div>
+        <div class="citem">
+          <div class="citem-num">03</div>
+          <div>
+            <div class="citem-title">App Avanti para toda la matrícula</div>
+            <div class="citem-desc">Los alumnos acceden al test con un código institucional. Resultados automáticos para cada estudiante, sin trabajo adicional del docente.</div>
+          </div>
+        </div>
+        <div class="citem">
+          <div class="citem-num">04</div>
+          <div>
+            <div class="citem-title">Coordinación profesional completa</div>
+            <div class="citem-desc">La Lic. María Pía Torre gestiona la convocatoria de universidades, la logística y el seguimiento. El colegio solo confirma fecha y espacio.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="colegio-panel">
+      <div class="panel-eyebrow">Solicitar propuesta</div>
+      <div class="panel-title">Llevamos la feria a tu colegio</div>
+      <p class="panel-text">Sin costo para la institución. Convocatoria de universidades a cargo nuestro. Todo el armado y la logística incluidos. Solo necesitamos fecha y espacio.</p>
+      <a href="https://wa.me/5491140849672?text=Hola!%20Soy%20directivo%20de%20un%20colegio%20y%20me%20interesa%20organizar%20una%20feria%20vocacional" class="panel-cta" target="_blank">Quiero info para mi colegio</a>
+      <div class="panel-contact">WhatsApp · 11 4084-9672 · Zona sur GBA</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section class="proceso" id="proceso">
+  <div class="section-eyebrow">Cómo trabajamos</div>
+  <h2 class="section-title">El proceso, <em>paso a paso</em></h2>
+  <p class="section-sub">Un recorrido claro, personalizado y con entregable concreto al final.</p>
+
+  <div class="proceso-steps">
+    <div class="pstep">
+      <div class="pstep-circle"><span>1</span></div>
+      <div class="pstep-name">Primera consulta</div>
+      <div class="pstep-desc">Conversación sin costo para conocernos, entender la situación y definir si el proceso es el indicado.</div>
+    </div>
+    <div class="pstep">
+      <div class="pstep-circle"><span>2</span></div>
+      <div class="pstep-name">Test Avanti</div>
+      <div class="pstep-desc">60 preguntas online. El alumno recibe su perfil. La orientadora recibe el mapa completo para trabajar.</div>
+    </div>
+    <div class="pstep">
+      <div class="pstep-circle"><span>3</span></div>
+      <div class="pstep-name">Sesiones de trabajo</div>
+      <div class="pstep-desc">Entre 4 y 6 encuentros para explorar intereses, miedos, influencias y posibilidades reales.</div>
+    </div>
+    <div class="pstep">
+      <div class="pstep-circle"><span>4</span></div>
+      <div class="pstep-name">Informe de perfil</div>
+      <div class="pstep-desc">Entregable final: un documento personalizado con el perfil vocacional, áreas recomendadas y pasos concretos.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contacto" id="contacto">
+  <div class="section-eyebrow" style="color:var(--gold); justify-content:center;">
+    <span style="background:var(--gold); width:20px; height:1px; display:inline-block;"></span>
+    Empezá hoy
+  </div>
+  <h2 class="section-title" style="text-align:center">¿Listo para tu próxima ruta?</h2>
+  <p class="section-sub" style="text-align:center">Primera consulta sin costo. Respondemos en menos de 24 horas. Sesiones presenciales en zona sur GBA y online.</p>
+
+  <div class="contact-grid">
+    <a href="https://wa.me/5491140849672" class="contact-btn wa" target="_blank">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp · 11 4084-9672
+    </a>
+    <a href="mailto:proximarutaconsultoria@gmail.com" class="contact-btn mail">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+      proximarutaconsultoria@gmail.com
+    </a>
+    <a href="https://instagram.com/proximaruta.consultoria" class="contact-btn ig" target="_blank">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      @proximaruta.consultoria
+    </a>
+  </div>
+
+  <div class="contact-detail">Quilmes, Buenos Aires · Zona sur GBA · Sesiones online disponibles</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Próxima <span>Ruta</span></div>
+  <div class="footer-text">Lic. María Pía Torre · Psicopedagoga · proximarutaconsultoria@gmail.com</div>
+  <div class="footer-text">© 2026 Próxima Ruta</div>
+</footer>
+
+<script>
+  document.querySelectorAll('.phone-opt').forEach(opt => {
+    opt.addEventListener('click', () => {
+      opt.closest('.phone-options').querySelectorAll('.phone-opt').forEach(o => o.classList.remove('active'));
+      opt.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
